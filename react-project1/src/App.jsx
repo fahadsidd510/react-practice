@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './components/Card';
 
 const Cards = [
@@ -43,6 +43,17 @@ const App = () => {
     console.log(val);
   }
 
+  const [counter, setCounter] = useState(0);
+
+  function incrementCounter() {
+    console.log("Incrementing counter");
+    setCounter(counter + 1)
+  }
+
+  function decrementCounter() {
+    console.log("Decrementing counter");
+    setCounter(counter - 1)
+  }
 
   return (
     <div className="cards-container">
@@ -62,6 +73,18 @@ const App = () => {
       <input type="text" onChange={function(elem){
         getInputValue(elem.target.value)
       }} />
+
+      <div className="counterNum">
+        <div className="counterText">
+          <h1>{counter}</h1>
+        </div>
+        <div className="CounterButtons">
+          <button className="counterButton" onClick={incrementCounter}> Incease Counter </button>
+          <button className="counterButton" onClick={decrementCounter}> Decrease Counter </button>
+        </div>
+      </div>
+      
+
     </div>
   )
 }

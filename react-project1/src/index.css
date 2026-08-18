@@ -57,3 +57,26 @@
 .card-button:hover {
   background: #1d4ed8;
 }
+
+
+
+.counterNum{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+
+
+.counterButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
