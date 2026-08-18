@@ -36,6 +36,14 @@ const App = () => {
   function clickMe() {
     alert("Button clicked!");
   }
+
+  // Reciving values from function example
+
+  function getInputValue (val) {
+    console.log(val);
+  }
+
+
   return (
     <div className="cards-container">
       {Cards.map((card, index) => (
@@ -51,6 +59,9 @@ const App = () => {
       <button className="load-more-button" onClick={clickMe}>
         ClickMe
       </button>
+      <input type="text" onChange={function(elem){
+        getInputValue(elem.target.value)
+      }} />
     </div>
   )
 }
