@@ -33,6 +33,9 @@ const Cards = [
 ];  
 
 const App = () => {
+  function clickMe() {
+    alert("Button clicked!");
+  }
   return (
     <div className="cards-container">
       {Cards.map((card, index) => (
@@ -44,6 +47,10 @@ const App = () => {
           callToAction={card.callToAction}
         />
       ))}
+
+      <button className="load-more-button" onClick={clickMe}>
+        ClickMe
+      </button>
     </div>
   )
 }
