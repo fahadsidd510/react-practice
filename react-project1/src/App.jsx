@@ -54,6 +54,15 @@ const App = () => {
     console.log("Decrementing counter");
     setCounter(counter - 1)
   }
+  const [person, setPerson] = useState({name: "John", age: 30, city: "New York"});
+  function changeUserData() {
+    const newPerson = {...person}
+    newPerson.name = "Fahad";
+    newPerson.age = 25;
+    newPerson.city = "Los Angeles";
+    setPerson(newPerson);
+    console.log({newPerson});
+  }
 
   return (
     <div className="cards-container">
@@ -77,10 +86,12 @@ const App = () => {
       <div className="counterNum">
         <div className="counterText">
           <h1>{counter}</h1>
+          <h1>{person.name}, {person.age}, {person.city}</h1>
         </div>
         <div className="CounterButtons">
           <button className="counterButton" onClick={incrementCounter}> Incease Counter </button>
           <button className="counterButton" onClick={decrementCounter}> Decrease Counter </button>
+          <button className="counterButton" onClick={changeUserData}> Change User Data </button>
         </div>
       </div>
       
