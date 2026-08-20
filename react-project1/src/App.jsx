@@ -64,7 +64,14 @@ const App = () => {
     console.log({newPerson});
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    const name = event.target.elements.name.value;
+    console.log("Form submitted with name:", name);
+  }
+
   return (
+    <>
     <div className="cards-container">
       {Cards.map((card, index) => (
         <Card
@@ -95,8 +102,19 @@ const App = () => {
         </div>
       </div>
       
+      
+      
 
     </div>
+      
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="name" placeholder="Enter your name" />
+        <button type="submit">Submit</button>
+      </form>
+    </>
+
+    
+
   )
 }
 
